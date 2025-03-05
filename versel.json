@@ -1,17 +1,9 @@
 {
-  "rewrites": [
-    { "source": "/(.*)", "destination": "/app/page.tsx" }
-  ],
+  "version": 2,
   "builds": [
     {
-      "src": "app/**/*",
-      "use": "@vercel/node"
-    }
-  ],
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "/app/page.tsx"
+      "src": "package.json",
+      "use": "@vercel/next"
     }
   ]
 }
