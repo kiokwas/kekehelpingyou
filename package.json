@@ -19,7 +19,8 @@
     "class-variance-authority": "latest",
     "clsx": "latest",
     "tailwind-merge": "latest",
-    "next-themes": "latest"
+    "next-themes": "latest",
+    "jspdf": "^2.5.1"
   },
   "devDependencies": {
     "autoprefixer": "latest",
