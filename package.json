@@ -14,16 +14,20 @@
     "framer-motion": "latest",
     "@radix-ui/react-alert-dialog": "latest",
     "@radix-ui/react-slot": "latest",
+    "@radix-ui/react-tabs": "latest",
+    "@radix-ui/react-dropdown-menu": "latest",
     "class-variance-authority": "latest",
     "clsx": "latest",
-    "tailwind-merge": "latest"
+    "tailwind-merge": "latest",
+    "next-themes": "latest"
   },
   "devDependencies": {
     "autoprefixer": "latest",
     "postcss": "latest",
     "tailwindcss": "latest",
     "@types/react": "latest",
-    "@types/node": "latest"
+    "@types/node": "latest",
+    "typescript": "latest"
   }
 }
 
