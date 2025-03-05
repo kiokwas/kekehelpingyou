@@ -1,24 +1,25 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  darkMode: ["class"],
+  darkMode: ["class"], // Enables dark mode with the class
   content: [
     "./pages/**/*.{ts,tsx}",
     "./components/**/*.{ts,tsx}",
-    "./app/**/*.{ts,tsx}",
+    "./app/**/*.{js,ts,jsx,tsx}",
     "./src/**/*.{ts,tsx}",
     "*.{js,ts,jsx,tsx,mdx}",
+	"./app/globals.css", // Add this line
   ],
   theme: {
     container: {
-      center: true,
-      padding: "2rem",
+      center: true, // Centers container
+      padding: "2rem", // Adds padding to the container
       screens: {
-        "2xl": "1400px",
+        "2xl": "1400px", // Max width for 2xl screens
       },
     },
     extend: {
       colors: {
-        border: "hsl(var(--border))",
+        border: "hsl(var(--border))", // Direct use of CSS variable for border
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
@@ -73,6 +74,7 @@ module.exports = {
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
-}
-
+  plugins: [
+    require("tailwindcss-animate"), // Tailwind animate plugin
+  ],
+};
