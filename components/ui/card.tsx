@@ -1,26 +1,44 @@
-import type React from "react"
+import * as React from "react"
 
-export function Card({ children }: { children: React.ReactNode }) {
-  return <div className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">{children}</div>
-}
+import { cn } from "@/lib/utils"
 
-export function CardHeader({ children }: { children: React.ReactNode }) {
-  return <div className="mb-4">{children}</div>
-}
+const Card = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(({ className, ...props }, ref) => (
+  <div ref={ref} className={cn("rounded-lg border bg-card text-card-foreground shadow-sm", className)} {...props} />
+))
+Card.displayName = "Card"
 
-export function CardTitle({ children }: { children: React.ReactNode }) {
-  return <h2 className="text-xl font-bold">{children}</h2>
-}
+const CardHeader = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(
+  ({ className, ...props }, ref) => (
+    <div ref={ref} className={cn("flex flex-col space-y-1.5 p-6", className)} {...props} />
+  ),
+)
+CardHeader.displayName = "CardHeader"
 
-export function CardDescription({ children }: { children: React.ReactNode }) {
-  return <p className="text-gray-700 text-base">{children}</p>
-}
+const CardTitle = React.forwardRef<HTMLParagraphElement, React.HTMLAttributes<HTMLHeadingElement>>(
+  ({ className, ...props }, ref) => (
+    <h3 ref={ref} className={cn("text-2xl font-semibold leading-none tracking-tight", className)} {...props} />
+  ),
+)
+CardTitle.displayName = "CardTitle"
 
-export function CardContent({ children }: { children: React.ReactNode }) {
-  return <div>{children}</div>
-}
+const CardDescription = React.forwardRef<HTMLParagraphElement, React.HTMLAttributes<HTMLParagraphElement>>(
+  ({ className, ...props }, ref) => (
+    <p ref={ref} className={cn("text-sm text-muted-foreground", className)} {...props} />
+  ),
+)
+CardDescription.displayName = "CardDescription"
 
-export function CardFooter({ children }: { children: React.ReactNode }) {
-  return <div className="border-t pt-4 mt-4">{children}</div>
-}
+const CardContent = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(
+  ({ className, ...props }, ref) => <div ref={ref} className={cn("p-6 pt-0", className)} {...props} />,
+)
+CardContent.displayName = "CardContent"
+
+const CardFooter = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(
+  ({ className, ...props }, ref) => (
+    <div ref={ref} className={cn("flex items-center p-6 pt-0", className)} {...props} />
+  ),
+)
+CardFooter.displayName = "CardFooter"
+
+export { Card, CardHeader, CardFooter, CardTitle, CardDescription, CardContent }
 
